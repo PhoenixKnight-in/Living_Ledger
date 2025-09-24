@@ -1,0 +1,279 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to vibrant cyberpunk-inspired color palette */
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.12 0.03 240);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.12 0.03 240);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: oklch(0.65 0.25 280);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.18 0.04 240);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.15 0.03 240);
+  --muted-foreground: oklch(0.65 0.02 240);
+  --accent: oklch(0.7 0.3 180);
+  --accent-foreground: oklch(0.98 0.01 240);
+  --destructive: oklch(0.65 0.25 15);
+  --destructive-foreground: oklch(0.98 0.01 240);
+  --border: oklch(0.2 0.04 240);
+  --input: oklch(0.18 0.04 240);
+  --ring: oklch(0.65 0.25 280);
+  --chart-1: oklch(0.7 0.3 180);
+  --chart-2: oklch(0.65 0.25 280);
+  --chart-3: oklch(0.75 0.25 60);
+  --chart-4: oklch(0.6 0.3 320);
+  --chart-5: oklch(0.8 0.2 120);
+  --radius: 1rem;
+  --sidebar: oklch(0.1 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.01 240);
+  --sidebar-primary: oklch(0.65 0.25 280);
+  --sidebar-primary-foreground: oklch(0.98 0.01 240);
+  --sidebar-accent: oklch(0.18 0.04 240);
+  --sidebar-accent-foreground: oklch(0.95 0.01 240);
+  --sidebar-border: oklch(0.2 0.04 240);
+  --sidebar-ring: oklch(0.65 0.25 280);
+}
+
+@theme inline {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+
+  /* Enhanced color system with neon accents */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-neon-cyan: oklch(0.7 0.3 180);
+  --color-neon-purple: oklch(0.65 0.25 280);
+  --color-neon-pink: oklch(0.7 0.25 320);
+  --color-neon-green: oklch(0.75 0.25 120);
+  --color-neon-yellow: oklch(0.8 0.25 60);
+  --color-success: oklch(0.75 0.25 120);
+  --color-success-foreground: oklch(0.98 0.01 240);
+  --color-warning: oklch(0.8 0.25 60);
+  --color-warning-foreground: oklch(0.98 0.01 240);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced animations with neon effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px oklch(0.65 0.25 280 / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px oklch(0.65 0.25 280 / 0.6);
+  }
+}
+
+@keyframes neon-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px oklch(0.7 0.3 180 / 0.5), 0 0 10px oklch(0.7 0.3 180 / 0.3), 0 0 15px oklch(0.7 0.3 180 / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px oklch(0.7 0.3 180 / 0.8), 0 0 20px oklch(0.7 0.3 180 / 0.6), 0 0 30px oklch(0.7 0.3 180 / 0.4);
+  }
+}
+
+@keyframes mascot-bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes rainbow-border {
+  0% {
+    border-color: oklch(0.7 0.3 180);
+  }
+  25% {
+    border-color: oklch(0.65 0.25 280);
+  }
+  50% {
+    border-color: oklch(0.7 0.25 320);
+  }
+  75% {
+    border-color: oklch(0.75 0.25 120);
+  }
+  100% {
+    border-color: oklch(0.7 0.3 180);
+  }
+}
+
+/* Added FINERA mascot specific animations */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes finera-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px oklch(0.75 0.25 120 / 0.3), 0 0 20px oklch(0.7 0.3 180 / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px oklch(0.75 0.25 120 / 0.6), 0 0 40px oklch(0.7 0.3 180 / 0.4);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.animate-mascot-bounce {
+  animation: mascot-bounce 2s ease-in-out infinite;
+}
+
+.animate-rainbow-border {
+  animation: rainbow-border 3s linear infinite;
+}
+
+/* Added new FINERA mascot animation classes */
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+.animate-finera-glow {
+  animation: finera-glow 2s ease-in-out infinite;
+}
+
+/* Enhanced card hover effects with neon glow */
+.card-hover {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px oklch(0.08 0.02 240 / 0.5), 0 0 20px oklch(0.7 0.3 180 / 0.3);
+  border-color: oklch(0.7 0.3 180 / 0.5);
+}
+
+.interactive-button {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px oklch(0.65 0.25 280 / 0.4);
+}
+
+.interactive-button:active {
+  transform: scale(0.98);
+}
+
+.interactive-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, oklch(0.9 0.1 180 / 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.interactive-button:hover::before {
+  left: 100%;
+}
