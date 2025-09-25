@@ -6,7 +6,6 @@ import '../widgets/quick_actions.dart';
 import '../widgets/financial_coach.dart';
 import '../widgets/transaction_list.dart';
 import '../widgets/floating_orbs.dart';
-import '../widgets/ai_assistant.dart';
 import 'payment_screen.dart';
 import 'dashboard_screen.dart';
 
@@ -60,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryDark,
+      backgroundColor: AppTheme.primaryLight,
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
@@ -71,9 +70,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  AppTheme.primaryDark,
-                  AppTheme.secondaryDark,
-                  AppTheme.accentDark,
+                  AppTheme.primaryLight,
+                  AppTheme.secondaryLight,
+                  AppTheme.accentLight,
                 ],
                 stops: [0.0, 0.5, 1.0],
               ),
@@ -99,11 +98,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           
           // AI Assistant
-          Positioned(
-            right: 20,
-            bottom: 100,
-            child: AIAssistant(),
-          ),
+          // Positioned(
+          //   right: 20,
+          //   bottom: 100,
+          //   child: AIAssistant(),
+          // ),
         ],
       ),
       bottomNavigationBar: _buildBottomNav(),

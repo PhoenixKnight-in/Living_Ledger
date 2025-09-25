@@ -18,7 +18,7 @@ class NeoWalletApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'NeoWallet',
-      theme: AppTheme.darkTheme,
+      theme: AppTheme.lightTheme,
       home: HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
