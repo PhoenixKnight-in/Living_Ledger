@@ -302,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       builder: (context) => AlertDialog(
         backgroundColor: AppTheme.cardBackground,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text('Add Money', style: TextStyle(color: AppTheme.textPrimary)),
+        title: Text('Add Goals', style: TextStyle(color: AppTheme.textPrimary)),
         content: Text('Add funds from bank account or card', 
           style: TextStyle(color: AppTheme.textSecondary)),
         actions: [

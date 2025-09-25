@@ -9,7 +9,7 @@ class AppTheme {
   static const Color cardBackground = Color(0xFFE8DFCA); // reused
   static const Color textPrimary = Color(0xFF1A1A1A);
   static const Color textSecondary = Color(0xFF555555);
-  static const Color neonGreen = Color(0xFF87CEFA); 
+  static const Color neonGreen = Color(0xFF87CEFA);
   static const Color neonBlue = Color(0xFF00008B);
   static const Color neonPurple = Color(0xFF0077BE);
 
@@ -19,7 +19,6 @@ class AppTheme {
       primaryColor: primaryLight,
       scaffoldBackgroundColor: backgroundLight,
 
-      // ✅ Text theme
       textTheme: const TextTheme(
         headlineLarge: TextStyle(
           color: textPrimary,
@@ -43,7 +42,7 @@ class AppTheme {
           fontWeight: FontWeight.normal,
         ),
       ),
-      
+
       // ✅ Elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -56,7 +55,7 @@ class AppTheme {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         ),
       ),
-      
+
       // ✅ App bar theme
       appBarTheme: const AppBarTheme(
         backgroundColor: backgroundLight,
@@ -64,7 +63,7 @@ class AppTheme {
         elevation: 0,
         centerTitle: true,
       ),
-      
+
       // ✅ Color scheme for Material 3
       colorScheme: const ColorScheme.light(
         primary: primaryLight,
@@ -85,16 +84,10 @@ class AppTheme {
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
-        colors: [
-          Colors.white.withOpacity(0.3),
-          Colors.white.withOpacity(0.15),
-        ],
+        colors: [Colors.white.withOpacity(0.3), Colors.white.withOpacity(0.15)],
       ),
       borderRadius: BorderRadius.circular(20),
-      border: Border.all(
-        color: Colors.black.withOpacity(0.05),
-        width: 1,
-      ),
+      border: Border.all(color: Colors.black.withOpacity(0.05), width: 1),
     );
   }
 
