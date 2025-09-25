@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryDark,
+      backgroundColor: AppTheme.primaryLight,
       extendBodyBehindAppBar: true,
       body: Stack(
         children: [
@@ -71,9 +71,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  AppTheme.primaryDark,
-                  AppTheme.secondaryDark,
-                  AppTheme.accentDark,
+                  AppTheme.primaryLight,
+                  AppTheme.secondaryLight,
+                  AppTheme.accentLight,
                 ],
                 stops: [0.0, 0.5, 1.0],
               ),
@@ -99,11 +99,11 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ),
           
           // AI Assistant
-          Positioned(
-            right: 20,
-            bottom: 100,
-            child: AIAssistant(),
-          ),
+          // Positioned(
+          //   right: 20,
+          //   bottom: 100,
+          //   child: AIAssistant(),
+          // ),
         ],
       ),
       bottomNavigationBar: _buildBottomNav(),
@@ -303,7 +303,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       builder: (context) => AlertDialog(
         backgroundColor: AppTheme.cardBackground,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: Text('Add Money', style: TextStyle(color: AppTheme.textPrimary)),
+        title: Text('Add Goals', style: TextStyle(color: AppTheme.textPrimary)),
         content: Text('Add funds from bank account or card', 
           style: TextStyle(color: AppTheme.textSecondary)),
         actions: [

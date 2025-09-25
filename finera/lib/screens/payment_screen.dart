@@ -58,7 +58,7 @@ class _PaymentScreenState extends State<PaymentScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryDark,
+      backgroundColor: AppTheme.primaryLight,
       body: Stack(
         children: [
           // Background gradient
@@ -68,8 +68,8 @@ class _PaymentScreenState extends State<PaymentScreen>
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  AppTheme.primaryDark,
-                  AppTheme.secondaryDark,
+                  AppTheme.primaryLight,
+                  AppTheme.secondaryLight,
                 ],
               ),
             ),

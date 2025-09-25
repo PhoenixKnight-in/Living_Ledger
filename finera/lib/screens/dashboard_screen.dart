@@ -49,15 +49,15 @@ class _DashboardScreenState extends State<DashboardScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primaryDark,
+      backgroundColor: AppTheme.primaryLight,
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              AppTheme.primaryDark,
-              AppTheme.secondaryDark,
+              AppTheme.primaryLight,
+              AppTheme.secondaryLight,
             ],
           ),
         ),

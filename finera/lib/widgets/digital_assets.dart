@@ -112,7 +112,7 @@ class _DigitalAssetsState extends State<DigitalAssets>
                   return Container(
                     width: 140,
                     margin: EdgeInsets.only(right: 12),
-                    padding: EdgeInsets.all(16),
+                    padding: EdgeInsets.all(12),
                     decoration: BoxDecoration(
                       color: AppTheme.cardBackground.withOpacity(0.7),
                       borderRadius: BorderRadius.circular(16),

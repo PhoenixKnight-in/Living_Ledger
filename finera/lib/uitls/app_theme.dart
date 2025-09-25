@@ -1,25 +1,32 @@
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  // Color constants
-  static const Color primaryDark = Color(0xFF0A0E1A);
-  static const Color secondaryDark = Color(0xFF1A2332);
-  static const Color accentDark = Color(0xFF2D3B52);
-  static const Color neonBlue = Color(0xFF00D4FF);
-  static const Color neonGreen = Color(0xFF39FF14);
-  static const Color neonPurple = Color(0xFF9D4EDD);
-  static const Color cardBackground = Color(0xFF1E2A3A);
-  static const Color textPrimary = Color(0xFFE8F4FD);
-  static const Color textSecondary = Color(0xFFB0C4DE);
-  
-  static ThemeData get darkTheme {
+  // 🎨 Updated Color constants (your new palette)
+  static const Color primaryLight = Color(0xFF6D94C5); // pastel blue
+  static const Color secondaryLight = Color(0xFFCBDCEB); // light sky
+  static const Color accentLight = Color(0xFFE8DFCA); // muted beige
+  static const Color backgroundLight = Color(0xFFF5EFE6); // soft cream
+  static const Color cardBackground = Color(0xFFE8DFCA); // reused
+  static const Color textPrimary = Color(0xFF1A1A1A);
+  static const Color textSecondary = Color(0xFF555555);
+  static const Color darkBlue = Color(0xFF00008B);
+  static const Color skyBlue = Color(0xFF87CEEB);
+  static const Color oceanBlue = Color(0xFF0077BE);
+
+
+  static const Color neonBlue = Color(0xFF0077BE);
+  static const Color neonGreen = Color(0xFF00008B);
+  static const Color neonPurple = Color(0xFF87CEEB);
+
+
+  static ThemeData get lightTheme {
     return ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: neonBlue,
-      scaffoldBackgroundColor: primaryDark,
+      brightness: Brightness.light,
+      primaryColor: primaryLight,
+      scaffoldBackgroundColor: backgroundLight,
       fontFamily: 'Inter',
       
-      // Updated text theme structure
+      // ✅ Text theme
       textTheme: const TextTheme(
         headlineLarge: TextStyle(
           color: textPrimary,
@@ -44,11 +51,11 @@ class AppTheme {
         ),
       ),
       
-      // Elevated button theme
+      // ✅ Elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: neonBlue,
-          foregroundColor: primaryDark,
+          backgroundColor: primaryLight,
+          foregroundColor: Colors.white,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
@@ -57,86 +64,71 @@ class AppTheme {
         ),
       ),
       
-      // App bar theme
+      // ✅ App bar theme
       appBarTheme: const AppBarTheme(
-        backgroundColor: primaryDark,
+        backgroundColor: backgroundLight,
         foregroundColor: textPrimary,
         elevation: 0,
         centerTitle: true,
       ),
       
-      // Color scheme for better Material 3 compatibility
-      colorScheme: ColorScheme.dark(
-        primary: neonBlue,
-        secondary: neonGreen,
-        tertiary: neonPurple,
+      // ✅ Color scheme for Material 3
+      colorScheme: const ColorScheme.light(
+        primary: primaryLight,
+        secondary: secondaryLight,
         surface: cardBackground,
-        background: primaryDark,
-        onPrimary: primaryDark,
-        onSecondary: primaryDark,
+        background: backgroundLight,
+        onPrimary: Colors.white,
+        onSecondary: textPrimary,
         onSurface: textPrimary,
         onBackground: textPrimary,
       ),
     );
   }
-  
-  // Glass morphism decoration
+
+  // Glass morphism decoration (lighter style)
   static BoxDecoration get glassMorphism {
     return BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          Colors.white.withOpacity(0.1),
-          Colors.white.withOpacity(0.05),
+          Colors.white.withOpacity(0.3),
+          Colors.white.withOpacity(0.15),
         ],
       ),
       borderRadius: BorderRadius.circular(20),
       border: Border.all(
-        color: Colors.white.withOpacity(0.2),
+        color: Colors.black.withOpacity(0.05),
         width: 1,
       ),
     );
   }
-  
-  // Neon glow decoration
-  static BoxDecoration get neonGlow {
+
+  // Glow effect adapted for light mode
+  static BoxDecoration get softGlow {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(20),
       boxShadow: [
         BoxShadow(
-          color: neonBlue.withOpacity(0.3),
+          color: primaryLight.withOpacity(0.3),
           blurRadius: 20,
           spreadRadius: 2,
         ),
       ],
     );
   }
-  
-  // Additional utility methods
-  static BoxDecoration neonGlowWithColor(Color color) {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [
-        BoxShadow(
-          color: color.withOpacity(0.3),
-          blurRadius: 20,
-          spreadRadius: 2,
-        ),
-      ],
-    );
-  }
-  
+
   // Gradient decoration
-  static BoxDecoration get neonGradient {
+  static BoxDecoration get pastelGradient {
     return BoxDecoration(
       gradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors: [
-          neonBlue.withOpacity(0.8),
-          neonPurple.withOpacity(0.8),
-          neonGreen.withOpacity(0.8),
+          primaryLight.withOpacity(0.8),
+          secondaryLight.withOpacity(0.8),
+          accentLight.withOpacity(0.8),
         ],
       ),
       borderRadius: BorderRadius.circular(20),
